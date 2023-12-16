@@ -1,0 +1,12 @@
+hnswlib
+curl_cffi==0.5.5
+fake_useragent==1.1.3
+python-dotenv==1.0.0
+Telethon==1.26.1
+wolframalpha==5.0
+chromadb==0.3.26
+pydantic==1.9.0
+aiohttp==3.8.4
+browser_cookie3==0.19.1
+pandas==1.3.3
+pyarrow==4.0.0
