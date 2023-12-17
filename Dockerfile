@@ -10,6 +10,8 @@ ADD . /app
 RUN apt-get update
 
 RUN apt-get install -y curl build-essential cmake libboost-all-dev git python3.9
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN python3.9 get-pip.py
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
