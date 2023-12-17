@@ -66,7 +66,7 @@ async def create_conversation(session: ClientSession) -> Conversation:
     url = 'https://www.bing.com/turing/conversation/create'
     async with await session.get(url) as response:
         response = await response.json()
-        logging.info(response.status_code)
+        logging.info(response.status)
         conversationId = response.get('conversationId')
         logging.info(conversationId)
         clientId = response.get('clientId')
