@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9
+FROM python:3.9-slim
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -7,7 +7,7 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 ADD . /app
 
-RUN apt-get update --fix-missing && apt-get install -y --fix-missing build-essential swig libomp-dev python3-dev && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*
 
 ENV HNSWLIB_NO_NATIVE=1  
 # Upgrading pip to the latest version
