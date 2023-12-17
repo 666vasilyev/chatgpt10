@@ -7,7 +7,7 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 ADD . /app
 
-# RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*
 
 ENV HNSWLIB_NO_NATIVE=1  
 # Upgrading pip to the latest version
