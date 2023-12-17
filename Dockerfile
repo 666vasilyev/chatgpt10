@@ -7,7 +7,7 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 ADD . /app
 
-RUN apt-get update --fix-missing && apt-get install -y --fix-missing build-essential
+RUN apt-get update --fix-missing && apt-get install -y --fix-missing build-essential python3.10-dev && rm -rf /var/lib/apt/lists/*
 
 ENV HNSWLIB_NO_NATIVE=1  
 # Upgrading pip to the latest version
