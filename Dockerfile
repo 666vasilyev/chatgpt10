@@ -9,6 +9,7 @@ ADD . /app
 
 RUN apt-get update --fix-missing && apt-get install -y --fix-missing build-essential
 
+ENV HNSWLIB_NO_NATIVE=1  
 # Upgrading pip to the latest version
 RUN pip install --upgrade pip
 
