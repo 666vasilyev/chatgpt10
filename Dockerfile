@@ -7,7 +7,7 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 ADD . /app
 
-RUN apt-get update && apt-get install -y build-essential python3-dev swig libomp-dev
+RUN apt-get update --fix-missing && apt-get install -y --fix-missing build-essential
 
 # Upgrading pip to the latest version
 RUN pip install --upgrade pip
