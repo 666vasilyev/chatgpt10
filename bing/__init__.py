@@ -71,7 +71,7 @@ async def create_conversation(session: ClientSession) -> Conversation:
         logging.info(f'conversation {conversationId}')
         clientId = response.get('clientId')
         logging.info(f'client is {clientId}')
-        conversationSignature = response.get('conversationSignature')
+        conversationSignature = 'mamuebal'
         logging.info(f'signature is {conversationSignature}')
         if not conversationId or not clientId or not conversationSignature:
             raise Exception('Failed to create conversation.')
