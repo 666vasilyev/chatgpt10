@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM ubuntu:latest
+FROM python:3.9
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -7,11 +7,7 @@ WORKDIR /app
 # Add the current directory contents into the container at /app
 ADD . /app
 
-RUN apt-get update
-
-RUN apt-get install -y curl build-essential cmake libboost-all-dev git python3.9
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-RUN python3.9 get-pip.py
+RUN apt-get update && apt-get install -y build-essential
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
