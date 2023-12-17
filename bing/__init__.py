@@ -66,13 +66,13 @@ async def create_conversation(session: ClientSession) -> Conversation:
     url = 'https://www.bing.com/turing/conversation/create'
     async with await session.get(url) as response:
         response = await response.json()
-        logging.info(response)
+        logging.info(f"response is {response}")
         conversationId = response.get('conversationId')
-        logging.info(conversationId)
+        logging.info(f'conversation {conversationId}')
         clientId = response.get('clientId')
-        logging.info(clientId)
+        logging.info(f'client is {clientId}')
         conversationSignature = response.get('conversationSignature')
-        logging.info(conversationId)
+        logging.info(f'signature is {conversationSignature}')
         if not conversationId or not clientId or not conversationSignature:
             raise Exception('Failed to create conversation.')
         
