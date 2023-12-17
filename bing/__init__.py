@@ -5,8 +5,9 @@ import json
 import os
 from aiohttp        import ClientSession, ClientTimeout
 import browser_cookie3
+import logging
 
-
+logging.basicConfig(level=logging.INFO)
 _cookies = {}
 
 def get_cookies(cookie_domain: str) -> dict:
@@ -65,10 +66,13 @@ async def create_conversation(session: ClientSession) -> Conversation:
     url = 'https://www.bing.com/turing/conversation/create'
     async with await session.get(url) as response:
         response = await response.json()
+        logging.info(response.status_code)
         conversationId = response.get('conversationId')
+        logging.info(conversationId)
         clientId = response.get('clientId')
+        logging.info(clientId)
         conversationSignature = response.get('conversationSignature')
-
+        logging.info(conversationId)
         if not conversationId or not clientId or not conversationSignature:
             raise Exception('Failed to create conversation.')
         
